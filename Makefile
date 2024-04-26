@@ -30,8 +30,6 @@ BONUS = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c \
 
 BON_OBJS = $(BONUS:.c=.o)
 
-INCLUDES = -I libft.h
-
 OBJS = $(SRCS:.c=.o)
 
 all: $(NAME)
@@ -51,7 +49,7 @@ fclean: clean
 
 re: fclean all
 
-bonus: $(BON_OBJS)
+bonus: $(NAME) $(BON_OBJS)
 	ar rc $(NAME) $(BON_OBJS)
 	ranlib $(NAME)
 
