@@ -12,4 +12,16 @@
 
 #include "libft.h"
 
-void	ft_lstiter(t_list *lst, void (*f)(void *));
+void	ft_lstiter(t_list *lst, void (*f)(void *)) // lst is the beginning of the list, f is the function to apply to each element
+{
+  t_list	*current;
+
+  if (!lst || !f)
+    return ;
+  current = lst;
+  while (current)
+  {
+    f(current->content); // apply the function f to the current element of the list
+    current = current->next; // move to the next element of the list
+  }
+}
