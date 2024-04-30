@@ -6,7 +6,7 @@
 /*   By: dgomez-a <dgomez-a@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 16:32:34 by dgomez-a          #+#    #+#             */
-/*   Updated: 2024/04/26 17:28:54 by dgomez-a         ###   ########.fr       */
+/*   Updated: 2024/04/30 17:13:38 by dgomez-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,18 +41,12 @@ char	**ft_free_split(char **split, size_t j)
 	return (0);
 }
 
-char	**ft_split(char const *s, char c)
+char	**ft_create_split(char const *s, char c, char **split)
 {
-	char	**split;
 	size_t	i;
 	size_t	j;
 	size_t	k;
 
-	if (!s)
-		return (0);
-	split = (char **)malloc((ft_count_words(s, c) + 1) * sizeof(char *));
-	if (!split)
-		return (0);
 	i = 0;
 	j = 0;
 	while (s[i])
@@ -72,5 +66,18 @@ char	**ft_split(char const *s, char c)
 			i++;
 	}
 	split[j] = 0;
+	return (0);
+}
+
+char	**ft_split(char const *s, char c)
+{
+	char	**split;
+
+	if (!s)
+		return (0);
+	split = (char **)malloc((ft_count_words(s, c) + 1) * sizeof(char *));
+	if (!split)
+		return (0);
+	ft_create_split(s, c, split);
 	return (split);
 }
