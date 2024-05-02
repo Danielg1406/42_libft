@@ -12,7 +12,6 @@
 
 #include "libft.h"
 
-// lst is the beginning of the list, f is the function to apply to each element
 void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
 	t_list	*current;

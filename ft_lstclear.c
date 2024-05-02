@@ -12,8 +12,6 @@
 
 #include "libft.h"
 
-// lst is the beginning of the list,
-//	del is the function to delete the content of an element
 void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
 	t_list	*current;

@@ -38,7 +38,7 @@ char	**ft_free_split(char **split, size_t j)
 	while (j--)
 		free(split[j]);
 	free(split);
-	return (0);
+	return (NULL);
 }
 
 char	**ft_create_split(char const *s, char c, char **split)
@@ -66,7 +66,7 @@ char	**ft_create_split(char const *s, char c, char **split)
 			i++;
 	}
 	split[j] = 0;
-	return (0);
+	return (split);
 }
 
 char	**ft_split(char const *s, char c)
@@ -74,10 +74,12 @@ char	**ft_split(char const *s, char c)
 	char	**split;
 
 	if (!s)
-		return (0);
+		return (NULL);
 	split = (char **)malloc((ft_count_words(s, c) + 1) * sizeof(char *));
 	if (!split)
-		return (0);
-	ft_create_split(s, c, split);
+		return (NULL);
+	split = ft_create_split(s, c, split);
+	if (!split)
+		return (NULL);
 	return (split);
 }

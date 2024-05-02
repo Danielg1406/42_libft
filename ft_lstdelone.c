@@ -12,8 +12,6 @@
 
 #include "libft.h"
 
-// lst is the element to free,
-// del is the function to delete the content of the element
 void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
 	if (!lst || !del)

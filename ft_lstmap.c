@@ -12,18 +12,19 @@
 
 #include "libft.h"
 
-// lst is the beginning of the list, f is the function to apply to each element,
-//	del is the function to delete the element
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*new;
 	t_list	*current;
 
-	if (!lst || !f)
+	if (!lst || !f || !del)
 		return (NULL);
 	new = ft_lstnew(f(lst->content));
 	if (!new)
+	{
+		del(new->content);
 		return (NULL);
+	}
 	current = new;
 	lst = lst->next;
 	while (lst)
