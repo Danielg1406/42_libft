@@ -1,12 +1,10 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+#include "test_libft.h"
 
 // Function to test
 char	*ft_itoa(int n);
 
 // Test function
-void test_ft_itoa(int n, char *expected_result) {
+void compare_ft_itoa(int n, char *expected_result) {
     char *result = ft_itoa(n);
     if (strcmp(result, expected_result) == 0) {
         printf("PASS: ft_itoa(%d) = \"%s\"\n", n, result);
@@ -16,14 +14,13 @@ void test_ft_itoa(int n, char *expected_result) {
     free(result);
 }
 
-int main() {
+void test_ft_itoa(void) 
+{
     // Test cases
-    test_ft_itoa(0, "0");
-    test_ft_itoa(-0, "0");
-    test_ft_itoa(123, "123");
-    test_ft_itoa(-456, "-456");
-    test_ft_itoa(2147483647, "2147483647");
-    test_ft_itoa(-2147483648, "-2147483648");
-
-    return 0;
+    compare_ft_itoa(0, "0");
+    compare_ft_itoa(-0, "0");
+    compare_ft_itoa(123, "123");
+    compare_ft_itoa(-456, "-456");
+    compare_ft_itoa(2147483647, "2147483647");
+    compare_ft_itoa(-2147483648, "-2147483648");
 }

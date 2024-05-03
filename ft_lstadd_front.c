@@ -12,8 +12,6 @@
 
 #include "libft.h"
 
-// lst is the address of the first element of the list,
-//	new is the element to add to the list
 void	ft_lstadd_front(t_list **lst, t_list *new)
 {
 	if (!lst || !new)

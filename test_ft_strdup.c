@@ -1,8 +1,6 @@
-#include "libft.h"
-#include <stdio.h>
-#include <stdlib.h>
+#include "test_libft.h"
 
-int	main(void)
+void	test_ft_strdup(void)
 {
 	// Test case 0: Duplicate an empty string
 	const char *s0 = "";
@@ -27,5 +25,4 @@ int	main(void)
 	char *dup3 = ft_strdup(s3);
 	printf("Duplicate: %s\n", dup3);
 	free(dup3);
-	return (0);
 }

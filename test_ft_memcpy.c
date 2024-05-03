@@ -1,8 +1,6 @@
-#include "libft.h"
-#include <stdio.h>
-#include <string.h>
+#include "test_libft.h"
 
-int	main(void)
+void	test_ft_memcpy(void)
 {
 	// Test case 0: Copying 5 integers
 	int src0[] = {1, 2, 3, 4, 5};
@@ -15,11 +13,12 @@ int	main(void)
 	{
 		if (dest0[i] != src0[i])
 		{
-			printf("Test case 0 failed: Copying integers failed\n");
+			printf("FAIL: Copying 5 integers failed\n");
 			break ;
 		}
 		i++;
 	}
+	printf("PASS: Copying 5 integers\n");
 
 	// Test case 1: Copying 0 elements
 	int src1[] = {};
@@ -31,11 +30,12 @@ int	main(void)
 	{
 		if (dest1[i] != i + 1)
 		{
-			printf("Test case 1 failed: Copying 0 elements modified destination array\n");
+			printf("FAIL: Copying 0 elements modified destination array\n");
 			break ;
 		}
 		i++;
 	}
+	printf("PASS: Copying 0 elements\n");
 
 	// Test case 2: Copying characters
 	char src2[] = "Hello";
@@ -47,10 +47,10 @@ int	main(void)
 	{
 		if (dest2[i] != src2[i])
 		{
-			printf("Test case 2 failed: Copying characters failed\n");
+			printf("FAIL: Copying characters failed\n");
 			break ;
 		}
 		i++;
 	}
-	return (0);
+	printf("PASS: Copying characters\n");
 }

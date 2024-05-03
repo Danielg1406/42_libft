@@ -1,7 +1,6 @@
-#include "libft.h"
-#include <stdio.h>
+#include "test_libft.h"
 
-int main()
+void	test_ft_substr(void)
 {
     // Test case 0: Substring with valid start index and length
     char *s0 = "Hello, World!";
@@ -26,5 +25,4 @@ int main()
     char *sub3 = ft_substr(s3, 7, 100);
     printf("Substr: %s\n", sub3);
     free(sub3);
-    return (0);
 }

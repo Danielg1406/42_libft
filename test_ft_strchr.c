@@ -1,7 +1,6 @@
-#include "libft.h"
-#include <stdio.h>
+#include "test_libft.h"
 
-int	main(void)
+void	test_ft_strchr(void)
 {
 	// Test case 0: Character exists in the string
 	const char *s0 = "Hello, World!";
@@ -32,5 +31,4 @@ int	main(void)
 	int c4 = '!';
 	char *result4 = ft_strchr(s4, c4);
 	printf("Result: %s\n", result4); // Expected output: "!"
-	return (0);
 }

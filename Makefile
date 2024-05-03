@@ -28,7 +28,20 @@ BONUS = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c \
 	ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c \
 	ft_lstmap.c
 
+TEST = test_ft_atoi.c test_ft_bzero.c test_ft_calloc.c test_ft_itoa.c \
+	   test_ft_lstadd_back.c test_ft_lstadd_front.c test_ft_lstclear.c \
+	   test_ft_lstdelone.c test_ft_lstiter.c test_ft_lstlast.c \
+	   test_ft_lstmap.c test_ft_lstnew.c test_ft_lstsize.c test_ft_memchr.c \
+	   test_ft_memcmp.c test_ft_memcpy.c test_ft_memmove.c test_ft_memset.c \
+	   test_ft_putchar_fd.c test_ft_putendl_fd.c test_ft_putnbr_fd.c \
+	   test_ft_putstr_fd.c test_ft_split.c test_ft_strchr.c test_ft_strdup.c \
+	   test_ft_striteri.c test_ft_strjoin.c test_ft_strlcat.c test_ft_strlcpy.c \
+	   test_ft_strlen.c test_ft_strmapi.c test_ft_strncmp.c test_ft_strnstr.c \
+	   test_ft_strrchr.c test_ft_strtrim.c test_ft_substr.c test_main.c 
+
 BON_OBJS = $(BONUS:.c=.o)
+
+TEST_OBJS = $(TEST:.c=.o)
 
 OBJS = $(SRCS:.c=.o)
 
@@ -52,5 +65,14 @@ re: fclean all
 bonus: $(NAME) $(BON_OBJS)
 	ar rc $(NAME) $(BON_OBJS)
 	ranlib $(NAME)
+
+clean_bonus:
+	rm -f $(BON_OBJS)
+
+test: $(NAME) $(TEST_OBJS)
+	$(CC) $(CFLAGS) $(TEST_OBJS) $(NAME) -o test
+
+clean_test:
+	rm -f $(TEST_OBJS)
 
 .PHONY: all clean fclean re

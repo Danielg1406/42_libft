@@ -1,8 +1,6 @@
-#include "libft.h"
-#include <stdio.h>
-#include <stdlib.h>
+#include "test_libft.h"
 
-int	main(void)
+void	test_ft_strtrim(void)
 {
 	// Test case 0: Trim leading and trailing whitespace
 	char *s0 = "   Hello, World!   ";

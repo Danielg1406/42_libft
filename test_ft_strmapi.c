@@ -1,6 +1,4 @@
-#include "libft.h"
-#include <stdio.h>
-#include <stdlib.h>
+#include "test_libft.h"
 
 char toupper_wrapper(unsigned int index, char c)
 {
@@ -13,7 +11,7 @@ char tolower_wrapper(unsigned int index, char c)
     return (char)ft_tolower((int)c);
 }
 
-int main(void)
+void	test_ft_strmapi(void)
 {
     // Test case 0: Mapping each character to its uppercase equivalent
     char *s0 = "hello";
@@ -26,5 +24,4 @@ int main(void)
     char *result3 = ft_strmapi(s3, &tolower_wrapper);
     printf("Result: \"%s\"\n", result3);
     free(result3);
-    return (0);
 }

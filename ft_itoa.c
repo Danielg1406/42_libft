@@ -12,8 +12,6 @@
 
 #include "libft.h"
 
-//#include <stdio.h>
-
 int	ft_count_digits(int n)
 {
 	int	count;
