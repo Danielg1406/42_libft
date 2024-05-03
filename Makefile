@@ -75,4 +75,7 @@ test: $(NAME) $(TEST_OBJS)
 clean_test:
 	rm -f $(TEST_OBJS)
 
+fclean_test: clean_test
+	rm -f test
+
 .PHONY: all clean fclean re

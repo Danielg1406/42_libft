@@ -46,5 +46,6 @@ void	test_ft_strnstr(void);
 void	test_ft_strrchr(void);
 void	test_ft_strtrim(void);
 void	test_ft_substr(void);
+void    del(void *content);
 
 #endif

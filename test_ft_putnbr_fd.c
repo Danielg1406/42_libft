@@ -8,8 +8,6 @@ void	test_ft_putnbr_fd(void)
 	int num4 = -2147483648;
 	int fd = 1; // stdout
 
-	printf("Testing ft_putnbr_fd...\n");
-
 	// Test positive number
 	printf("Expected output for ft_putnbr_fd(%d, %d): %d\n", num1, fd, num1);
 	ft_putnbr_fd(num1, fd);
