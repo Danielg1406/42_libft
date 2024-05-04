@@ -1,29 +1,28 @@
 #include "test_libft.h"
 
-void free(void *content)
-{
-	(void)content;
-}
-
 void	test_ft_lstdelone(void)
 {
-	printf("Not implemented\n");
-	// t_list *list1 = ft_lstnew("Hello");
-	// t_list *list2 = ft_lstnew("World");
-	// t_list *list3 = ft_lstnew("!");
+	int *a = malloc(sizeof(int));
+	int *b = malloc(sizeof(int));
+	int *c = malloc(sizeof(int));
 
-	// // Test case 1: Deleting a single node
-	// ft_lstdelone(list1, free);
-	// if (list1 == NULL)
-	// 	printf("PASS: Single node deleted successfully\n");
-	// else
-	// 	printf("FAIL: Failed to delete single node\n");
+	*a = 1;
+	*b = 2;
+	*c = 3;
 
-	// // Test case 2: Deleting multiple nodes
-	// list2->next = list3;
-	// ft_lstdelone(list2, free);
-	// if (list2 == NULL && list3 == NULL)
-	// 	printf("PASS: Multiple nodes deleted successfully\n");
-	// else
-	// 	printf("FAIL: Failed to delete multiple nodes\n");
+	// Create a new list with 'a' as the first element
+	t_list *root = ft_lstnew(a);
+	ft_lstadd_back(&root, ft_lstnew(b)); // Add 'b' to the back of the list
+	ft_lstadd_back(&root, ft_lstnew(c)); // Add 'c' to the back of the list
+
+	// Iterate through the list and print each element
+	printf("Before deletion\n");
+	for (t_list *curr = root; curr != NULL; curr = curr->next)
+		printf("%d\n", *(int *)curr->content);
+	ft_lstdelone(root->next, del); // Delete the second element in the list
+
+	// Iterate through the list again and print each element
+	printf("After deletion\n");
+	for (t_list *curr = root; curr != NULL; curr = curr->next)
+		printf("%d\n", *(int *)curr->content);
 }

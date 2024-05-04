@@ -10,7 +10,17 @@ void	test_ft_lstadd_back(void)
 	ft_lstadd_back(&list0, node0);
 	// Verify that the new node is added to the list
 	if (list0 == node0 && list0->next == NULL)
+	{
 		printf("PASS: Add a new node to an empty list\n");
+		// Print the new list with the added value
+		t_list *current = list0;
+		while (current != NULL)
+		{
+			printf("%d ", *(int *)current->content);
+			current = current->next;
+		}
+		printf("\n");
+	}
 	else
 		printf("FAIL: Add a new node to an empty list\n");
 	free(list0);
