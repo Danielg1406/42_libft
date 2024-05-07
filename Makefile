@@ -50,7 +50,7 @@ all: $(NAME)
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
-$(NAME): $(OBJS)
+$(NAME): $(OBJS) 
 	ar rc $(NAME) $(OBJS)
 	ranlib $(NAME)
 

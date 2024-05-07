@@ -18,7 +18,6 @@ void test_ft_itoa(void)
 {
     // Test cases
     compare_ft_itoa(0, "0");
-    compare_ft_itoa(-0, "0");
     compare_ft_itoa(123, "123");
     compare_ft_itoa(-456, "-456");
     compare_ft_itoa(2147483647, "2147483647");

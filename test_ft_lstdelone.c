@@ -1,28 +1,28 @@
 #include "test_libft.h"
 
+
 void	test_ft_lstdelone(void)
 {
-	int *a = malloc(sizeof(int));
-	int *b = malloc(sizeof(int));
-	int *c = malloc(sizeof(int));
+	t_list *lst = NULL;
 
-	*a = 1;
-	*b = 2;
-	*c = 3;
+	t_list *node1 = ft_lstnew(ft_strdup("ONE"));
+	t_list *node2 = ft_lstnew(ft_strdup("TWO"));
+	t_list *node3 = ft_lstnew(ft_strdup("THREE"));
 
-	// Create a new list with 'a' as the first element
-	t_list *root = ft_lstnew(a);
-	ft_lstadd_back(&root, ft_lstnew(b)); // Add 'b' to the back of the list
-	ft_lstadd_back(&root, ft_lstnew(c)); // Add 'c' to the back of the list
+	ft_lstadd_back(&lst, node1);
+	ft_lstadd_back(&lst, node2);
+	ft_lstadd_back(&lst, node3);
 
 	// Iterate through the list and print each element
-	printf("Before deletion\n");
-	for (t_list *curr = root; curr != NULL; curr = curr->next)
-		printf("%d\n", *(int *)curr->content);
-	ft_lstdelone(root->next, del); // Delete the second element in the list
+	printf("Before deletion:\n");
+	for (t_list *curr = lst; curr != NULL; curr = curr->next)
+		printf("%s ", (char *)curr->content);
+	node1->next = node2->next; // Set the first element's next pointer to the second element
+	ft_lstdelone(node2, del); // Delete the second element in the list
 
 	// Iterate through the list again and print each element
-	printf("After deletion\n");
-	for (t_list *curr = root; curr != NULL; curr = curr->next)
-		printf("%d\n", *(int *)curr->content);
+	printf("\nAfter deletion:\n");
+	for (t_list *curr = lst; curr != NULL; curr = curr->next)
+		printf("%s ", (char *)curr->content);
+	printf("\n");
 }

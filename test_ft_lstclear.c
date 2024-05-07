@@ -1,10 +1,9 @@
 #include "test_libft.h"
 
-void	del(void *content)
+void del(void *content)
 {
-	free(content);
+	(void)content; // Avoid unused parameter warning
 }
-
 void	test_ft_lstclear(void)
 {
 	t_list	*list = NULL;

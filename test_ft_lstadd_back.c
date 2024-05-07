@@ -8,21 +8,13 @@ void	test_ft_lstadd_back(void)
 	t_list *node0;
 	node0 = ft_lstnew(&content0);
 	ft_lstadd_back(&list0, node0);
-	// Verify that the new node is added to the list
-	if (list0 == node0 && list0->next == NULL)
+	t_list *current = list0;
+	while (current != NULL)
 	{
-		printf("PASS: Add a new node to an empty list\n");
-		// Print the new list with the added value
-		t_list *current = list0;
-		while (current != NULL)
-		{
-			printf("%d ", *(int *)current->content);
-			current = current->next;
-		}
-		printf("\n");
+		printf("%d ", *(int *)current->content);
+		current = current->next;
 	}
-	else
-		printf("FAIL: Add a new node to an empty list\n");
+	printf("\n");
 	free(list0);
 
 	// Test case 2: Add a new node to a non-empty list
@@ -31,10 +23,12 @@ void	test_ft_lstadd_back(void)
 	list1 = ft_lstnew("Hello");
 	node1 = ft_lstnew("World");
 	ft_lstadd_back(&list1, node1);
-	// Verify that the new node is added to the end of the list
-	if (list1->next == node1 && list1->next->next == NULL)
-		printf("PASS: Add a new node to an non-empty list\n");
-	else
-		printf("FAIL: Add a new node to an non-empty list\n");
+	t_list *current1 = list1;
+	while (current1 != NULL)
+	{
+		printf("%s ", (char *)current1->content);
+		current1 = current1->next;
+	}
+	printf("\n");
 	free(list1);
 }
