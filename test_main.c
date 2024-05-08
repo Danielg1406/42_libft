@@ -3,6 +3,16 @@
 int main(void)
 {
     printf("Testing libft functions\n");
+    printf("\nTesting ft_isalpha\n");
+    test_ft_isalpha();
+    printf("\nTesting ft_isdigit\n");
+    test_ft_isdigit();
+    printf("\nTesting ft_isalnum\n");
+    test_ft_isalnum();
+    printf("\nTesting ft_isascii\n");
+    test_ft_isascii();
+    printf("\nTesting ft_isprint\n");
+    test_ft_isprint();
     printf("\nTesting ft_strlen\n");
     test_ft_strlen();
     printf("\nTesting ft_memset\n");
@@ -17,6 +27,10 @@ int main(void)
     test_ft_strlcpy();
     printf("\nTesting ft_strlcat\n");
     test_ft_strlcat();
+    printf("\nTesting ft_toupper\n");
+    test_ft_toupper();
+    printf("\nTesting ft_tolower\n");
+    test_ft_tolower();
     printf("\nTesting ft_strchr\n");
     test_ft_strchr();
     printf("\nTesting ft_strrchr\n");
